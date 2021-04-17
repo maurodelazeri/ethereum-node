@@ -9,7 +9,7 @@ docker-compose up -d
 ## Check sync status
 
 ```
-docker exec ethereum_mainnet geth attach --exec eth.syncing
+docker exec ethereum_mainnet geth attach http://127.0.0.1:8545 --exec eth.syncing
 ```
 
 
