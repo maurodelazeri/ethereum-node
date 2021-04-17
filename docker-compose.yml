@@ -8,8 +8,8 @@ networks:
 services:
   ethereum_mainnet:
     image: ethereum/client-go
-    container_name: geth
-    hostname: geth
+    container_name: ethereum_mainnet
+    hostname: ethereum_mainnet
     restart: unless-stopped
     ports:
       - "30303:30303"
