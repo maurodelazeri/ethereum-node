@@ -1,4 +1,4 @@
-# Ethereum Full Node (Mainnet and Testnet)
+# Ethereum Full Node (Mainnet)
 
 ### Startup
 
