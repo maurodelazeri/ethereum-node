@@ -1,0 +1,50 @@
+version: "3"
+
+networks:
+  default:
+    external:
+      name: external
+
+services:
+  ethereum_mainnet:
+    image: ethereum/client-go
+    container_name: geth
+    hostname: geth
+    restart: unless-stopped
+    ports:
+      - "30303:30303"
+      - "30303:30303/udp"
+      - "8545:8545"
+      - "8585:8585" # websocket
+      - "8546:8546"
+      - "6060:6060"
+    volumes:
+      - ./data/goethereum:/var/lib/goethereum
+    stop_signal: SIGINT
+    stop_grace_period: 2m
+    command:
+      - --nousb
+      - --http
+      - --syncmode=full
+      - --nousb
+      - --cache=8192
+      - --maxpeers=100
+      - --metrics
+      - --pprof
+      - --pprof.addr=0.0.0.0
+      - --http.addr=0.0.0.0
+      - --http.vhosts=*
+      - --http.corsdomain="*"
+      - --ws
+      - --ws.port=8585
+      - --ws.origins="*"
+      - --ws.addr=0.0.0.0
+      - --ws.api
+      - "eth,net,web3"
+      - --datadir
+      - "/var/lib/goethereum"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "2m"
+        max-file: "10"
