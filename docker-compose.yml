@@ -25,10 +25,13 @@ services:
     command:
       - --nousb
       - --http
-      - --syncmode=full
+      - --syncmode
+      - full
       - --nousb
-      - --cache=8192
-      - --maxpeers=100
+      - --cache
+      - "8192"
+      - --maxpeers
+      - "100"
       - --metrics
       - --pprof
       - --pprof.addr=0.0.0.0
