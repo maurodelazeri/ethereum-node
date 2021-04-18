@@ -27,6 +27,8 @@ services:
       - --http
       - --syncmode
       - full
+      - --gcmode
+      - archive        
       - --nousb
       - --cache
       - "8192"
