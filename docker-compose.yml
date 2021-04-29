@@ -69,7 +69,6 @@ services:
     stop_signal: SIGINT
     stop_grace_period: 2m
     command:
-      - --warp      
       - --chain
       - kovan
       - --mode
