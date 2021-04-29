@@ -59,10 +59,10 @@ services:
     restart: unless-stopped
     user: parity:parity
     ports:
-      - "30304:30303"
-      - "30303:30303/udp"
-      - "38548:8546"
-      - "38547:8545"
+      - "20304:30303"
+      - "20303:30303/udp"
+      - "6546:8546"
+      - "6545:8545"
     volumes:
       - ./data/kovan:/data/kovan/
     stop_signal: SIGINT
