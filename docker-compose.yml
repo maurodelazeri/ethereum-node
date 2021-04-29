@@ -26,14 +26,12 @@ services:
       - --nousb
       - --http
       - --syncmode
-      - full
-      - --gcmode
-      - archive        
+      - fast
       - --nousb
       - --cache
       - "8192"
       - --maxpeers
-      - "100"
+      - "500"
       - --metrics
       - --pprof
       - --pprof.addr=0.0.0.0
