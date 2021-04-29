@@ -76,7 +76,7 @@ services:
       - --port 
       - "30303"
       - --base-path 
-      - /tmp/kovan/
+      - "/tmp/kovan/"
       - --jsonrpc-port 
       - "8545"
       - --jsonrpc-interface 
