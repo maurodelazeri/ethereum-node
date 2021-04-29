@@ -62,6 +62,7 @@ services:
       - "20304:30303"
       - "20303:30303/udp"
       - "6546:8546"
+      - "6585:6585" # websocket
       - "6545:8545"
     volumes:
       - ./data/kovan:/data/kovan/
@@ -84,6 +85,14 @@ services:
       - "all"
       - --jsonrpc-hosts 
       - "all" 
+      - --ws-port
+      - "6585"
+      - --ws-interface
+      - "all"      
+      - --ws-origins
+      - "all"
+      - --ws-hosts
+      - "all"
     logging:
       driver: "json-file"
       options:
