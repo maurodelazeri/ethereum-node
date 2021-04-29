@@ -71,8 +71,7 @@ services:
     command:
       - --chain
       - kovan
-      - --mode 
-      - active
+      - --light
       - --port 
       - "30303"
       - --base-path 
