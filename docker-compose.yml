@@ -53,3 +53,41 @@ services:
       options:
         max-size: "2m"
         max-file: "10"
+
+  ethereum_kovan:
+    image: parity/parity:latest
+    container_name: ethereum_kovan
+    hostname: ethereum_kovan
+    restart: unless-stopped
+    user: parity:parity
+    ports:
+      - "30304:30303"
+      - "30303:30303/udp"
+      - "38548:8546"
+      - "38547:8545"
+    volumes:
+      - ./data/kovan:/data/kovan/
+    stop_signal: SIGINT
+    stop_grace_period: 2m
+    command:
+      - --chain
+      - kovan
+      - --mode 
+      - active
+      - --port 
+      - "30303"
+      - --base-path 
+      - /tmp/kovan/
+      - --jsonrpc-port 
+      - "8545"
+      - --jsonrpc-interface 
+      - "all" 
+      - --jsonrpc-cors 
+      - "all"
+      - --jsonrpc-hosts 
+      - "all" 
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "2m"
+        max-file: "10"  
