@@ -92,6 +92,8 @@ services:
       - "all"
       - --ws-hosts
       - "all"
+      - --gas-floor-target
+      - "9721975"
     logging:
       driver: "json-file"
       options:
